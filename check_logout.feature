@@ -47,4 +47,4 @@ Scenario: Perform login the app and perform navigation with the browser.
 	When I open WhatsAPP
 		And I open browser
 	When I open the Easy Taxi Driver App
-	Then I checked itens and texts in main screen
+	Then I checked itens and texts in main 
