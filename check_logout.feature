@@ -48,28 +48,3 @@ Scenario: Perform login the app and perform navigation with the browser.
 		And I open browser
 	When I open the Easy Taxi Driver App
 	Then I checked itens and texts in main screen
-
-Scenario: Acess the app with user logged and accessing WhatsApp and many sites in browser per 10 times.
-	Given I am on the Easy Taxi Driver App
-	Then I checked itens and texts in main screen
-	When I acess app and others app in 10 times
-
-Scenario: Acess the app with user logged and accessing many sites and return for app.
-	Given I am on the Easy Taxi Driver App
-	Then I checked itens and texts in main screen
-	When I acess menu and checked itens and text
-		And I press home button
-	When I open browser with link "http://www.easytaxi.com/br/| https://www.youtube.com/| http://www.facebook.com/| https://www.youtube.com/watch?v=M7D7ynntNbg&list=PL4PvAOXB_l2non9NiuTRy4dXwFKEvUKWv"
-		And I open the Easy Taxi Driver App in login screen
-	Then I checked itens and texts in main screen
-	When I acess menu and checked itens and text
-	Then I wait for 10 seconds
-
-Scenario: Acess the app with user logged and put the device on stand by mode per 60 seconds and return the app again.
-	Given I am on the Easy Taxi Driver App
-	Then I checked itens and texts in main screen
-	When I acess menu and checked itens and text
-		And I put the device on stand by mode
-	Then I wait for 60 seconds
-	When I put the device on active
-	Then I checked itens and texts in main screen
