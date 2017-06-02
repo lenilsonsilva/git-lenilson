@@ -1,0 +1,30 @@
+package br.com.easytaxi.components;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.html5.Location;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import br.com.easytaxi.control.BaseTest;
+
+public class ContactComponent extends BaseTest{
+	WebDriverWait wait;
+
+	public void waitHome() {
+		wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("br.com.easytaxi.homolog:id/img_logo")));
+		Location gps = new Location(-23.541008, -46.733843, 726);
+		driver.setLocation(gps);
+
+	}
+
+	public void waitPopUp() throws Exception {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("android:id/button1"))).click();
+
+	}
+	
+	public void clickMenuContact(){
+		driver.findElementsById("br.com.easytaxi.homolog:id/design_menu_item_text").get(5).click();
+		driver.findElementById("android:id/title");
+	}
+}
