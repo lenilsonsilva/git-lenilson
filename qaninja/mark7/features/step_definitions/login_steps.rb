@@ -1,7 +1,8 @@
 
 Dado("que estou na página de login") do
    #visit 'https://mark7.herokuapp.com/login'
-   visit 'https://mark7-sandbox.herokuapp.com/login'
+   #visit 'https://mark7-sandbox.herokuapp.com/login'
+   visit 'https://mark7-sandbox.herokuapp.com'
 end
   
 Quando("faço login com {string} e {string}") do |email, senha|
@@ -43,7 +44,7 @@ Então("devo ver a mensagem de alerta {string}") do |mensagem|
       fill_in 'login_email', with: email
       fill_in 'login_password', with: senha
       find('button[id*=btnLogin]').click
-      sleep 1.5
+      sleep 1
    end
 
  end
