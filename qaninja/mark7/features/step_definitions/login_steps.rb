@@ -6,20 +6,21 @@ Dado("que estou na página de login") do
 end
   
 Quando("faço login com {string} e {string}") do |email, senha|
-
    #Find 1
     #find('#login_email').set email
     #find('#login_password').set senha
-
-   # Fill_in funciona quando o elemento inout possui id ou name 
-   fill_in 'login_email', with: email
-   fill_in 'login_password', with: senha
-
    #click_button 'Login'
-   find('button[id*=btnLogin]').click
-
-  
+   #Fill_in funciona quando o elemento inout possui id ou name 
+  #fill_in 'login_email', with: email
+   #fill_in 'login_password', with: senha
+   #find('button[id*=btnLogin]').click
+ @login_page = LoginPage.new
+ @login_page.campo_email.set email
+ @login_page.campo_senha.set senha
+ @login_page.botao_entrar.click
     sleep 5
+ 
+
 end
   
 Então("devo ver a mensagem {string}") do |mensagem|
@@ -32,8 +33,6 @@ Então("devo ver a mensagem de alerta {string}") do |mensagem|
    expect(alerta_login.text).to eql mensagem
  end
 
-
- 
 #Tentativas
  Dado("a quantidade maxima de login é {int} tentativas") do |tentativas|
   @tentativas = tentativas + 1
@@ -41,10 +40,14 @@ Então("devo ver a mensagem de alerta {string}") do |mensagem|
  
  Quando("tento logar com {string} e {string}") do |email, senha|
    @tentativas.times do
-      fill_in 'login_email', with: email
-      fill_in 'login_password', with: senha
-      find('button[id*=btnLogin]').click
-      sleep 1
+      #fill_in 'login_email', with: email
+      #fill_in 'login_password', with: senha
+      #find('button[id*=btnLogin]').click find('button[id*=btnLogin]').click
+      @login_page = LoginPage.new
+      @login_page.campo_email.set email
+      @login_page.campo_senha.set senha
+      @login_page.botao_entrar.click
+      sleep 1.5
    end
 
  end
