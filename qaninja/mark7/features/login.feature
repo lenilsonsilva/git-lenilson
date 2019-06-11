@@ -5,14 +5,14 @@ Funcionalidade: Login
     Sendo um usuário cadastrado
     Posso acessar o sistema com meu email e minha senha
 
-   
+   @temp
     Cenário: Usuário autenticado
 
         Dado que estou na página de login
         Quando faço login com "test1@test.com" e "123456"
         Então devo ver a mensagem "Olá, Lenilson"
 
-  @temp
+
   Esquema do Cenario: Tentativa de logar
         Dado que estou na página de login
         Quando faço login com "<email>" e "<senha>"

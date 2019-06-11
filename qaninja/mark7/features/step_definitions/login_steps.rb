@@ -10,14 +10,16 @@ Quando("faço login com {string} e {string}") do |email, senha|
     #find('#login_email').set email
     #find('#login_password').set senha
    #click_button 'Login'
+
    #Fill_in funciona quando o elemento inout possui id ou name 
-  #fill_in 'login_email', with: email
+   #fill_in 'login_email', with: email
    #fill_in 'login_password', with: senha
    #find('button[id*=btnLogin]').click
- @login_page = LoginPage.new
- @login_page.campo_email.set email
- @login_page.campo_senha.set senha
- @login_page.botao_entrar.click
+
+    @login_page=LoginPage.new
+    @login_page.login_email.set email
+    @login_page.login_password.set senha
+    @login_page.login_button.click 
     sleep 5
  
 
@@ -42,11 +44,12 @@ Então("devo ver a mensagem de alerta {string}") do |mensagem|
    @tentativas.times do
       #fill_in 'login_email', with: email
       #fill_in 'login_password', with: senha
-      #find('button[id*=btnLogin]').click find('button[id*=btnLogin]').click
+      #find('button[id*=btnLogin]').click 
+
       @login_page = LoginPage.new
-      @login_page.campo_email.set email
-      @login_page.campo_senha.set senha
-      @login_page.botao_entrar.click
+      @login_page.login_email.set email
+      @login_page.login_password.set senha
+      @login_page.login_button.click 
       sleep 1.5
    end
 
