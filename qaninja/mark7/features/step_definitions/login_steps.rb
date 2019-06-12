@@ -21,8 +21,6 @@ Quando("faço login com {string} e {string}") do |email, senha|
     @login_page.login_password.set senha
     @login_page.login_button.click 
     sleep 5
- 
-
 end
   
 Então("devo ver a mensagem {string}") do |mensagem|

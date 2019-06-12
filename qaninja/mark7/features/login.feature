@@ -5,7 +5,7 @@ Funcionalidade: Login
     Sendo um usuário cadastrado
     Posso acessar o sistema com meu email e minha senha
 
-   @temp
+    @temp
     Cenário: Usuário autenticado
 
         Dado que estou na página de login
@@ -31,7 +31,7 @@ Funcionalidade: Login
         Cenario: Bloqueia apos 5 tentativas
 
             Dado que estou na página de login
-            E a quantidade maxima de login é 5 tentativas
+            E a quantidade maxima de login é 6 tentativas
             Quando tento logar com "test1@test.com" e "123xpt"
             Então devo ver a mensagem de alerta "Usuário bloqueado. Por favor aguarde 10 segundos, e tente novamente."
 

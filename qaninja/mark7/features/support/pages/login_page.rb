@@ -1,17 +1,23 @@
-class LoginPage
-    include Capybara::DSL
+class LoginPage < SitePrism::Page
+       element :login_email, '#login_email'
+       element :login_password, '#login_password'
+       element :login_button, 'button[id*=btnLogin]'
+
+
+
+   # include Capybara::DSL
        
-        def login_email
-            find('#login_email')
-        end
+        #def login_email
+            #find('#login_email')
+        #end
     
-        def login_password
-            find('#login_password')
-        end
-        
-        def login_button
-            find('button[id*=btnLogin]')
-        end
+        #def login_password
+            #find('#login_password')
+        #end
+
+        #def login_button
+            #find('button[id*=btnLogin]')
+        #end
 
         
 end   
