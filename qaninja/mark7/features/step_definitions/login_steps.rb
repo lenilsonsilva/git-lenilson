@@ -17,9 +17,11 @@ Quando("faço login com {string} e {string}") do |email, senha|
    #find('button[id*=btnLogin]').click
 
     @login_page=LoginPage.new
-    @login_page.login_email.set email
-    @login_page.login_password.set senha
-    @login_page.login_button.click 
+    #@login_page.login_email.set email
+    #@login_page.login_password.set senha
+    #@login_page.login_button.click 
+    @login_page.logar(email, senha)
+
     sleep 5
 end
   
@@ -44,10 +46,11 @@ Então("devo ver a mensagem de alerta {string}") do |mensagem|
       #fill_in 'login_password', with: senha
       #find('button[id*=btnLogin]').click 
 
-      @login_page = LoginPage.new
-      @login_page.login_email.set email
-      @login_page.login_password.set senha
-      @login_page.login_button.click 
+      @login_page=LoginPage.new
+      #@login_page.login_email.set email
+      #@login_page.login_password.set senha
+      #@login_page.login_button.click 
+      @login_page.logar(email, senha)
       sleep 1.5
    end
 

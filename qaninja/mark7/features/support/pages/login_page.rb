@@ -3,7 +3,11 @@ class LoginPage < SitePrism::Page
        element :login_password, '#login_password'
        element :login_button, 'button[id*=btnLogin]'
 
-
+      def logar(email, senha)
+        login_email.set email
+        login_password.set senha
+        login_button.click
+      end   
 
    # include Capybara::DSL
        
