@@ -1,16 +1,27 @@
-class LoginPage < SitePrism::Page
-        set_url '/login'
+class LoginPage
+    include Capybara::DSL
+    def load
+       visit '/login'
+    end    
+
+        #set_url '/login'
        
-       element :login_email, '#login_email'
-       element :login_password, '#login_password'
-       element :login_button, 'button[id*=btnLogin]'
-       element :alerta, '.alert-login'
+       #element :login_email, '#login_email'
+       #element :login_password, '#login_password'
+       #element :login_button, 'button[id*=btnLogin]'
+       #element :alerta, '.alert-login'
 
       def logar(email, senha)
-        login_email.set email
-        login_password.set senha
-        login_button.click
+        find('#login_email').set email
+        find('#login_password').set senha
+        find('button[id*=btnLogin]').click
+        #login_button.click
       end   
+
+      def alerta
+        find('.alert-login')
+      end  
+
 
    # include Capybara::DSL
        
