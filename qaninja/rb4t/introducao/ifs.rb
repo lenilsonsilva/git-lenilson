@@ -8,6 +8,8 @@ saldo = 500
     #puts ' Fique na Pista'
 #end
 
+
+
 if saldo >= 500
     puts 'Partiu camarote'
     elsif saldo > 100
