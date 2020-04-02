@@ -8,7 +8,7 @@ loop do
   puts '4- Divisão'
   puts '0- Sair'
   print 'Opção: '
-  
+  clear
   option = gets.chomp.to_i
   
   case option 
